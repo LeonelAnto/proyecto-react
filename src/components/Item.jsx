@@ -1,13 +1,5 @@
 import React from 'react'
-
-
-/*
-"id": 1,
-        "nombre": "heart sweet",
-        "tipo": "collar",
-        "precio": 6500,
-        "imagen": "./heart-sweet.jfif"
-*/
+import { Link } from 'react-router-dom'
 
 
 const Item = ({item}) => {

@@ -4,23 +4,19 @@ import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer = () => {
-  const [product, setProducts] = useState([])
+  const [product, setProducts] = useState(null);
+  const {id} = useParams ();
 
-  const {id} = useParams
 
-
-  useEffect(
-    () => {
-      const product = mockProducts.find(productToFind => productToFind.id === id)
+  useEffect(() => {
+      const producto = mockProducts.find(productToFind => productToFind.id === Number(id))
       console.log("id encontrado");
-      
-      
-      setProducts(product)
+      setProducts(producto)
     
     }, [id]
   )
   
-  return (product && <ItemDetail product={product}/>)
+  return product && <ItemDetail product={product}/>;
 }
 
 export default ItemDetailContainer
